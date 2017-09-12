@@ -19,6 +19,7 @@
 * OS : Android 4.3 이상
 * Sensor : Magnetic Field(Uncalibrated), Gyroscope(Uncalibrated), Accelerometer
 * Device status : Location Information ON (in case above Android 6.0)
+
 ![](https://dl.dropboxusercontent.com/s/w4hezv4q6rpeodi/locationInfo.png)
 
 # Features
