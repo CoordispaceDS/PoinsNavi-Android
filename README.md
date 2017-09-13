@@ -12,7 +12,7 @@
 * [Installation](#installation)
 * [Usage](#usage)
   * [View 생성](#view-생성)
-  * [길찾기](#길찾기-swift)
+  * [지도보기 및 길찾기](#지도보기-및-길찾기)
 
 # Requirements
 
@@ -83,7 +83,9 @@ dependencies {
 
 # Usage
 
-### Framgment 호출
+### View 생성
+
+__Framgment 호출__
 
 PoinsNavi Fragment를 호출하여 맵 화면을 볼 수 있습니다.
 지도를 일부 layout 내에 내장하고 지도 이외의 기능을 유연하게 사용하고자 할 경우 아래와 같이 Fragment를 추가합니다. 
@@ -136,7 +138,7 @@ fragmentManager.beginTransaction().addToBackStack(null);
 
 Fragment의 경우 외부에서 여러 가지 설정을 할 수 있으며 자세한 API는 [IndoorFragment API](#indoorfragment-api) 에서 확인할 수 있습니다. 
 
-### Activity 호출
+__Activity 호출__
 
 간단히 PoinsNavi 자체 Activity를 사용할 경우 아래와 같이 Intent 호출도 가능합니다.
 ```java
@@ -158,5 +160,33 @@ intent.putExtra(IntroActivity.KEY_MAPINDEX_LIST, mapIds);
 startActivity(intent);
 ```
 
-# IndoorFragment API
+### 지도보기 및 길찾기
 
+다음 method를 통해 매장 바로가기 및 길찾기 기능을 사용할 수 있습니다.
+```java
+void findPosition(int index, boolean guide) 
+void findPosition(String name, boolean guide) 
+```
+1. 매장의 room index를 아는 경우
+
+* 지도보기
+```java
+indoorFragment.findPosition(6494, false);
+```
+* 길찾기
+```java
+indoorFragment.findPosition(6494, true);
+```
+
+2. 매장명(POI명)을 아는 경우
+동일한 매장명을 사용하는 경우 일치하는 첫번째 검색 결과를 사용합니다.
+
+* 지도보기
+```java
+indoorFragment.findPosition("코스메데코르테", false);
+```
+
+* 길찾기
+```java
+indoorFragment.findPosition("코스메데코르데", true);
+```
