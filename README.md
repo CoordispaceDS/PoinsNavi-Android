@@ -190,3 +190,5 @@ indoorFragment.findPosition("코스메데코르테", false);
 ```java
 indoorFragment.findPosition("코스메데코르데", true);
 ```
+
+* _맵의 크기에 따라 로딩시간이 오래 걸릴 수 있어 맵과의 전환이 잦은 시나리오를 사용할 경우 맵뷰 위에 UI를 작성한 후 View전환을 하는 형태로 개발하는 것을 권장합니다._
