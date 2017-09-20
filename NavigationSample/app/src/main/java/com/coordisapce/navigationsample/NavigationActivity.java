@@ -23,8 +23,7 @@ public class NavigationActivity extends Activity implements PoiEventListener {
         setContentView(R.layout.activity_navigation);
 
         ArrayList<Integer> mapIds = new ArrayList<>();
-        mapIds.add(29); // 코디스페이스
-//        mapIds.add(95); // 예술의 전당
+        mapIds.add(38);
         //Fragment change
         FragmentManager fragmentManager = getFragmentManager();
         Fragment f = fragmentManager.findFragmentById(R.id.fl_ips);
