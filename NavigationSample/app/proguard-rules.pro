@@ -15,13 +15,13 @@
 #-keepclassmembers class fqcn.of.javascript.interface.for.webview {
 #   public *;
 #}
--keep class com.coordispace.** { *; }
--keep interface com.coordispace.poinsnetworks.** { *; }
--keep public class com.coordispace.poinsnetworks.** { *; }
--keep class com.coordispace.poinsips.IPSConnector { *; }
--keep class com.coordispace.calibration.MgnCalibration { *; }
--keep class com.coordispace.data.** { *; }
--keep class com.coordispace.poinsmapview.** {*;}
 -keep class bitter.jnibridge.** { *; }
 -keep class com.unity3d.** { *; }
 -keep class org.fmod.** { *; }
+
+-keep class com.google.android.gms.** { *; }
+-dontwarn com.google.android.gms.**
+
+-keep interface com.coordispace.** { *; }
+-keep class com.coordispace.** { *; }
+-dontwarn com.coordispace.**
