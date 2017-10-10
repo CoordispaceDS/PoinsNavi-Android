@@ -112,7 +112,10 @@ activity.xml
 
 ```java
 int mapIndex = 1;
-IndoorFragment indoorFragment = IndoorFragment.newInstance(mapIndex);
+String language = "KO";
+String serverUrl = "http://11.22.333.444:5555/";
+
+IndoorFragment indoorFragment = IndoorFragment.newInstance(mapIndex, language, serverUrl);
 FragmentManager fragmentManager = getFragmentManager();
 Fragment f = fragmentManager.findFragmentById(R.id.ll_fragment);
 if (f != null && f instanceof IndoorFragment) {
@@ -127,7 +130,11 @@ ArrayList<Integer> mapIds = new ArrayList<>();
 mapIds.add(1);
 mapIds.add(2);
 mapIds.add(3);
-IndoorFragment indoorFragment = IndoorFragment.newInstance(mapIds);
+
+String language = "KO";
+String serverUrl = "http://11.22.333.444:5555/";
+
+IndoorFragment indoorFragment = IndoorFragment.newInstance(mapIds, language, serverUrl);
 FragmentManager fragmentManager = getFragmentManager();
 Fragment f = fragmentManager.findFragmentById(R.id.ll_fragment);
 if (f != null && f instanceof IndoorFragment) {
@@ -144,6 +151,8 @@ __Activity 호출__
 ```java
 Intent intent = new Intent(this, IntroActivity.class);
 intent.putExtra(IntroActivity.KEY_MAPINDEX, mapIndex);
+intent.putExtra(IntroActivity.KEY_LANGUAGE, language);
+intent.putExtra(IntroActivity.KEY_SERVER_URL, serverUrl);
 startActivity(intent);
 ```
 
@@ -155,8 +164,13 @@ mapIds.add(2);
 mapIds.add(3);
 mSelectedMapIndexList = mapIds;
 
+String language = "KO";
+String serverUrl = "http://11.22.333.444:5555/";
+
 Intent intent = new Intent(MainActivity.this, IntroActivity.class);
 intent.putExtra(IntroActivity.KEY_MAPINDEX_LIST, mapIds);
+intent.putExtra(IntroActivity.KEY_LANGUAGE, language);
+intent.putExtra(IntroActivity.KEY_SERVER_URL, serverUrl);
 startActivity(intent);
 ```
 
