@@ -174,6 +174,13 @@ intent.putExtra(IntroActivity.KEY_SERVER_URL, serverUrl);
 startActivity(intent);
 ```
 
+언어를 따로 지정하지 않고, 디바이스의 언어값을 쓰시려면 language에 null을 넣어줍니다.
+```java
+IndoorFragment indoorFragment = IndoorFragment.newInstance(mapIds, null, serverUrl);
+//or
+intent.putExtra(IntroActivity.KEY_LANGUAGE, null);
+```
+
 ### 지도보기 및 길찾기
 
 다음 method를 통해 매장 바로가기 및 길찾기 기능을 사용할 수 있습니다.
