@@ -24,14 +24,17 @@ public class NavigationActivity extends Activity implements PoiEventListener {
 
         ArrayList<Integer> mapIds = new ArrayList<>();
         mapIds.add(38);
+        String language = "KO";
+        String serverURL = "http://14.63.220.174:8082/";
+
         //Fragment change
         FragmentManager fragmentManager = getFragmentManager();
         Fragment f = fragmentManager.findFragmentById(R.id.fl_ips);
         if(f != null && f instanceof IndoorFragment) {
-            fragmentManager.beginTransaction().replace(R.id.fl_ips, IndoorFragment.newInstance(mapIds)).commit();
+            fragmentManager.beginTransaction().replace(R.id.fl_ips, IndoorFragment.newInstance(mapIds, language, serverURL)).commit();
         }
         else {
-            fragmentManager.beginTransaction().add(R.id.fl_ips, IndoorFragment.newInstance(mapIds)).commit();
+            fragmentManager.beginTransaction().add(R.id.fl_ips, IndoorFragment.newInstance(mapIds, language, serverURL)).commit();
         }
         fragmentManager.beginTransaction().addToBackStack(null);
 
